@@ -1,4 +1,4 @@
-# CS336 Final Project: Vector Space Model
+# CS336 Final Project: Text Retrieval
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/)
 
 ## Instructor
