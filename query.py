@@ -11,7 +11,7 @@ docs_file = os.path.join(os.getcwd(), 'data', 'docs.pickle')
 inverted_index_file = os.path.join(
     os.getcwd(), 'data', 'inverted_index.pickle')
 
-stopwords_file = os.path.join(os.getcwd(), 'resources', 'stopwords_en.txt')
+stopwords_file = os.path.join(os.getcwd(), 'resources', 'stopwords_vn.txt')
 
 # Deserialize data
 with open(docs_file, 'rb') as f:
@@ -46,6 +46,6 @@ scores.sort(key=lambda doc: doc[1], reverse=True)
 
 print('----- Results ------ ')
 for index, score in enumerate(scores):
-    if score[1] == 0:
+    if index == 10:
         break
     print('{}. {} - {}'.format(index + 1, docs[score[0]], score[1]))
