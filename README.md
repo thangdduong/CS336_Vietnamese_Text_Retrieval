@@ -1,12 +1,10 @@
-# Simple vector space retrieval model with Python 3
+# CS336 Final Project: Vector Space Model
+[Python](https://www.python.org/)
 
-## Get started
-
-- Install [Python 3.5+](https://www.python.org/)
-- Install [NLTK 3](http://www.nltk.org/) package via `pip` command:
+## Installation
 
 ```bash
-$ pip install nltk
+$ pip install -r requirements.txt
 ```
 
 ## Usage
