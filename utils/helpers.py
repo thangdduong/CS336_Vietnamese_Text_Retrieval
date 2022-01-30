@@ -5,7 +5,7 @@ import math
 
 
 def get_stopwords(stopwords_file):
-    with open(stopwords_file, mode='r') as f:
+    with open(stopwords_file, mode='r', encoding="utf-8") as f:
         stopwords = set(f.read().split())
     return stopwords
 
@@ -36,6 +36,7 @@ def compute_weights(idf, doc):
 
 def normalize(doc):
     denominator = math.sqrt(sum([e ** 2 for e in doc.values()]))
+
     for word, value in doc.items():
         doc[word] = value / denominator
 
