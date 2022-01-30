@@ -2,7 +2,7 @@
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/)
 
 ## Instructor
-<b>PhD. Thanh Duc Ngo</b>
+<b>Ph.D. Thanh Duc Ngo</b>
 
 ## Members
 <table>
@@ -28,7 +28,7 @@
 
 ## Installation
 
-We highly recommend using Anaconda for creating a virtual enviroment, this ensure the program can run perfectly. You can download Anaconda in the following instruction: ![download](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html).
+We highly recommend using Anaconda for creating a virtual enviroment, this ensure the program can run perfectly. You can download Anaconda in the following instruction: [download](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html).
 
 After Anaconda is downloaded, create a virtual enviroment and install required libraries:
 
