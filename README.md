@@ -1,13 +1,10 @@
 # CS336 Final Project: Vector Space Model
-![Python](https://www.python.org/)
+[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/)
 
-## Instructor:
-<ul>
-  <li> <b>PhD. Thanh Duc Ngo</b></li>
-</ul> 
+## Instructor
+<b>PhD. Thanh Duc Ngo</b>
 
 ## Members
-
 <table>
   <tr>
     <th>No.</th>
