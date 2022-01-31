@@ -51,7 +51,6 @@ Markdown==3.3.4
 MarkupSafe==2.0.1
 matplotlib==3.3.3
 matplotlib-inline==0.1.2
-mediapipe==0.8.8.1
 multitasking==0.0.9
 networkx==2.5.1
 nltk==3.6.7
