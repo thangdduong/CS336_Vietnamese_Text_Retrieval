@@ -15,8 +15,8 @@ from utils import textprocessing, helpers
 
 print('Indexing....')
 
-resources_path = os.path.join(os.getcwd(), 'resources')
-data_path = os.path.join(os.getcwd(), 'data')
+resources_path = "resources"
+data_path = "data"
 
 if not os.path.isdir(resources_path):
     print('ERROR: The {} is not a directory or does not exist'.format(
@@ -69,11 +69,11 @@ for doc in docs:
         #print(text)
         chunks_of_words = body.split("\r\n")
         chunks_of_words = list(filter(None, [line.strip() for line in chunks_of_words]))
-        print(chunks_of_words)
+        #print(chunks_of_words)
         words = []
         for text_chunk in chunks_of_words:
             words += textprocessing.preprocess_text(text_chunk, stopwords)
-        print(words)
+        #print(words)
         bag_of_words = Counter(words)
         corpus.append(bag_of_words)
         worksheet.write_number(row, col, i)
@@ -84,8 +84,6 @@ for doc in docs:
         #df = df.append(row_content, ignore_index = True)
     i += 1
     print(n - i)
-    if i == 2:
-        break
 
 workbook.close()
 #df.to_excel("data.xlsx")
