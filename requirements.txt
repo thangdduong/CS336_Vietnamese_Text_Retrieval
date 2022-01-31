@@ -87,7 +87,6 @@ pyglet==1.5.15
 Pygments==2.9.0
 pypandoc==1.5
 pyparsing==2.4.7
-pypiwin32==223
 PyQt5==5.15.1
 PyQt5-sip==12.8.1
 PySocks==1.7.1
