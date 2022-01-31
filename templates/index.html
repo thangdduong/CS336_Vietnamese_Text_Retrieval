@@ -2,7 +2,7 @@
 <html lang="vi" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <title>CS221: Question Answering</title>
+    <title>CS336: Text Retrieval</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -32,33 +32,106 @@
                 <a class="navbar-brand" href="https://www.uit.edu.vn/" target="_blank">
                     <span class="navbar-brand mb-0 h1" style="color:black;">
                         <img src="{{url_for('static', filename = 'images/logo-uit.png')}}" alt="" width="93" height="74" class="d-inline-block align-text">
-                            CS221: Xử lý ngôn ngữ tự nhiên
+                            CS336: Truy vấn thông tin đa phương tiện
                     </span>
                 </a>
             </div>
             <div class="navbar-collapse">
                 <span class="navbar-nav ml-auto h4" style="color:black">
-                    Question Answering demo
+                    Text Retrieval Demo
                 </span>
             </div>
         </nav>
         <div class="container">
-            <form  action="{{ url_for('question_answering_test') }}" method="post">
-                <label for="user-question">Câu hỏi của bạn (Question):</label>
+            <form  action="{{ url_for('text_retrieval_demo') }}" method="post">
+                <label for="user-query">Input a query:</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="user-question" name="user-question" placeholder="Nhập một câu hỏi bất kì..." aria-describedby="basic-addon2" value="{{ request.form['user-question'] }}" required>
+                    <input type="text" class="form-control" id="user-query" name="user-query" placeholder="Type something here..." aria-describedby="basic-addon2" value="{{ request.form['user-query'] }}" required>
                     <div class="input-group-append">
                         <button class="btn btn-primary" id="submit-btn" type="submit">Submit</button>
                     </div>
                 </div>
-                <label for="context">Ngữ cảnh (Context):</label>
-                <div class="input-group mb-5">
-                    <textarea style="height:150px" class="form-control input-lg" type="text" id="context" name="context" placeholder="Nhập một đoạn văn bản bất kì..." name="context" required>{{user_context}}</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="answer">Câu trả lời (Answer):</label>
-                    <textarea style="height:40px" class="form-control" type="text" id="answer" name="answer" readonly>{{answer_found}}</textarea>
-                </div>
+                <label for="user-query">Top 10 documents</label>
+                <div class="row">
+                    <div class="col-4">
+                      <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action active" id="list-top1-list" data-toggle="list" href="#list-top1" role="tab" aria-controls="top1">
+                            {{ top_1_title }}
+                        <span class="badge badge-warning">Rank 1</span>
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="list-top2-list" data-toggle="list" href="#list-top2" role="tab" aria-controls="top2">
+                            {{ top_2_title }}
+                            <span class="badge badge-success">Rank 2</span>
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="list-top3-list" data-toggle="list" href="#list-top3" role="tab" aria-controls="top3">
+                            {{ top_3_title }}
+                            <span class="badge badge-danger">Rank 3</span>
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="list-top4-list" data-toggle="list" href="#list-top4" role="tab" aria-controls="top4">
+                            {{ top_4_title }}
+                            <span class="badge badge-secondary">Rank 4</span>
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="list-top5-list" data-toggle="list" href="#list-top5" role="tab" aria-controls="top5">
+                            {{ top_5_title }}
+                            <span class="badge badge-secondary">Rank 5</span>
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="list-top6-list" data-toggle="list" href="#list-top6" role="tab" aria-controls="top6">
+                            {{ top_6_title }}
+                            <span class="badge badge-secondary">Rank 6</span>
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="list-top7-list" data-toggle="list" href="#list-top7" role="tab" aria-controls="top7">
+                            {{ top_7_title }}
+                            <span class="badge badge-secondary">Rank 7</span>
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="list-top8-list" data-toggle="list" href="#list-top8" role="tab" aria-controls="top8">
+                            {{ top_8_title }}
+                            <span class="badge badge-secondary">Rank 8</span>
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="list-top9-list" data-toggle="list" href="#list-top9" role="tab" aria-controls="top9">
+                            {{ top_9_title }}
+                            <span class="badge badge-secondary">Rank 9</span>
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="list-top10-list" data-toggle="list" href="#list-top10" role="tab" aria-controls="top10">
+                            {{ top_10_title }}
+                            <span class="badge badge-secondary">Rank 10</span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane active" id="list-top1" role="tabpanel" aria-labelledby="list-top1-list">
+                            {{ top_1_body }}
+                        </div>
+                        <div class="tab-pane" id="list-top2" role="tabpanel" aria-labelledby="list-top2-list">
+                            {{ top_2_body }}
+                        </div>
+                        <div class="tab-pane" id="list-top3" role="tabpanel" aria-labelledby="list-top3-list">
+                            {{ top_3_body }}
+                        </div>
+                        <div class="tab-pane" id="list-top4" role="tabpanel" aria-labelledby="list-top4-list">
+                            {{ top_4_body }}
+                        </div>
+                        <div class="tab-pane" id="list-top5" role="tabpanel" aria-labelledby="list-top5-list">
+                            {{ top_5_body }}
+                        </div>
+                        <div class="tab-pane" id="list-top6" role="tabpanel" aria-labelledby="list-top6-list">
+                            {{ top_6_body }}
+                        </div>
+                        <div class="tab-pane" id="list-top7" role="tabpanel" aria-labelledby="list-top7-list">
+                            {{ top_7_body }}
+                        </div>
+                        <div class="tab-pane" id="list-top8" role="tabpanel" aria-labelledby="list-top8-list">
+                            {{ top_8_body }}
+                        </div>
+                        <div class="tab-pane" id="list-top9" role="tabpanel" aria-labelledby="list-top9-list">
+                            {{ top_9_body }}
+                        </div>
+                        <div class="tab-pane" id="list-top10" role="tabpanel" aria-labelledby="list-top10-list">
+                            {{ top_10_body }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </form>
         </div>
     </div>
