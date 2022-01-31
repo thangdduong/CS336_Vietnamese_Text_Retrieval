@@ -26,13 +26,9 @@
     color: white;
 }
 
- .qa-container {
-    width: max-content;
-    height: max-content;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left:0;
-    right:0;
-    margin: auto;
+.list-group{
+    max-height: 300px;
+    margin-bottom: 10px;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
 }
