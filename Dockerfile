@@ -3,6 +3,7 @@ FROM python:3.7
 
 ### 2. Get Java via the package manager
 # Install OpenJDK-8
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 6494C6D6997C215E 
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
     add-apt-repository ppa:openjdk-r/ppa
