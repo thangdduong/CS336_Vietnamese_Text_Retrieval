@@ -4,7 +4,7 @@ FROM python:3.7
 ### 2. Get Java via the package manager
 # Install OpenJDK-8
 RUN apt-get update && \
-    apt-get install software-properties-common && \
+    apt-get install -y software-properties-common && \
     add-apt-repository ppa:openjdk-r/ppa
 RUN apt-get update && \
     apt-get install -y openjdk-8-jdk && \
