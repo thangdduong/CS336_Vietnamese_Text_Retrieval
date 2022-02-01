@@ -1,5 +1,5 @@
 ### 1. Get Linux
-FROM alpine
+FROM alpine:3.7
 FROM python:3.7
 
 ### 2. Get Java via the package manager
