@@ -32,13 +32,13 @@
                 <a class="navbar-brand" href="https://www.uit.edu.vn/" target="_blank">
                     <span class="navbar-brand mb-0 h1" style="color:black;">
                         <img src="{{url_for('static', filename = 'images/logo-uit.png')}}" alt="" width="93" height="74" class="d-inline-block align-text">
-                            CS336: Truy vấn thông tin đa phương tiện
+                            CS336: Multimedia Information Retrieval
                     </span>
                 </a>
             </div>
             <div class="navbar-collapse">
                 <span class="navbar-nav ml-auto h4" style="color:black">
-                    Text Retrieval Demo
+                    Vietnamese Text Retrieval Demo
                 </span>
             </div>
         </nav>
@@ -46,7 +46,7 @@
             <form  action="{{ url_for('text_retrieval_demo') }}" method="post">
                 <label for="user-query">Input a query:</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="user-query" name="user-query" placeholder="Type something here..." aria-describedby="basic-addon2" value="{{ request.form['user-query'] }}" required>
+                    <input type="text" class="form-control" id="user-query" name="user-query" placeholder="Type something here (e.g: quán cà phê đẹp, kết quả đá banh Việt Nam...)" aria-describedby="basic-addon2" value="{{ request.form['user-query'] }}" required>
                     <div class="input-group-append">
                         <button class="btn btn-primary" id="submit-btn" type="submit">Submit</button>
                     </div>
@@ -97,7 +97,7 @@
                         </a>
                       </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-8">
                       <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane active" id="list-top1" role="tabpanel" aria-labelledby="list-top1-list">
                             {{ top_1_body }}

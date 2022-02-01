@@ -27,7 +27,14 @@
 }
 
 .list-group{
-    max-height: 300px;
+    max-height: 400px;
+    margin-bottom: 10px;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tab-content{
+    max-height: 400px;
     margin-bottom: 10px;
     overflow-y:auto;
     -webkit-overflow-scrolling: touch;
