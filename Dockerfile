@@ -1,26 +1,12 @@
 ### 1. Get Linux
-FROM python:3.7
+FROM python:3.8.2-buster
 
 ### 2. Get Java via the package manager
 # Install OpenJDK-8
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EB9B1D8886F44E2A 
+# Install OpenJDK-11
 RUN apt-get update && \
-    apt-get install -y software-properties-common && \
-    add-apt-repository ppa:openjdk-r/ppa
-RUN apt-get update && \
-    apt-get install -y openjdk-8-jdk && \
-    apt-get install -y ant && \
+    apt-get install -y openjdk-11-jre-headless && \
     apt-get clean;
-    
-# Fix certificate issues
-RUN apt-get update && \
-    apt-get install ca-certificates-java && \
-    apt-get clean && \
-    update-ca-certificates -f;
-
-# Setup JAVA_HOME -- useful for docker commandline
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
-RUN export JAVA_HOME
 
 ### 3. Get Python, PIP
 
@@ -37,9 +23,9 @@ ENV FLASK_RUN_HOST 0.0.0.0
 ENV FLASK_RUN_PORT 8080
 ### Get Flask for the app
 # RUN pip install --trusted-host pypi.python.org flask
-ADD requirements.txt /
+COPY requirements.txt /
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+    pip install --no-cache-dir -r requirements.txt
 
 ####
 #### OPTIONAL : 4. SET JAVA_HOME environment variable, uncomment the line below if you need it
