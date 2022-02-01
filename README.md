@@ -1,5 +1,5 @@
 # CS336 Final Project: Text Retrieval
-[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/)
+[![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/)
 
 ## Instructor
 <b>Ph.D. Thanh Duc Ngo</b>
@@ -52,4 +52,10 @@ To perform query, run `query.py` script and provide an argument for it:
 
 ```bash
 $ python query.py "your query here"
+```
+
+We also build a simple web demo using Flask, if you want to have a look at it please run:
+
+```bash
+$ python main.py
 ```
