@@ -24,7 +24,8 @@ ENV FLASK_RUN_HOST 0.0.0.0
 ENV FLASK_RUN_PORT 8080
 ### Get Flask for the app
 # RUN pip install --trusted-host pypi.python.org flask
-RUN pip install -r requirements.txt
+ADD requirements.txt /
+RUN pip3 install -r requirements.txt
 
 ####
 #### OPTIONAL : 4. SET JAVA_HOME environment variable, uncomment the line below if you need it
