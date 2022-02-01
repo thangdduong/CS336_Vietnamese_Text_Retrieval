@@ -48,4 +48,6 @@ print('----- Results ------ ')
 for index, score in enumerate(scores):
     if index == 10:
         break
-    print('{}. {} - {}'.format(index + 1, docs[score[0]], score[1]))
+    file_name = docs[score[0]].split("\\")[-1]
+    doc_path = os.path.join(os.getcwd(), 'resources', 'dataset', file_name)
+    print('{}. {} - {}'.format(index + 1, doc_path, score[1]))

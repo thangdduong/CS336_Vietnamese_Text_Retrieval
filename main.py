@@ -82,7 +82,9 @@ def query(query):
             document_info_dict["body"] = "..."
             document_info_dict["score"] = str(score[1])
         else:
-            with open(docs[score[0]], "r", encoding="utf-16-le") as f:
+            file_name = docs[score[0]].split("\\")[-1]
+            doc_path = os.path.join(os.getcwd(), 'resources', 'dataset', file_name)
+            with open(doc_path, "r", encoding="utf-16-le") as f:
                 title = f.readline()
                 text = [line for line in f if line != "\r\n"]
                 body = " ".join(text)
