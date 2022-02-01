@@ -24,7 +24,8 @@ ENV FLASK_RUN_PORT 8080
 ENV FLASK_ENV development
 ### Get Flask for the app
 # RUN pip install --trusted-host pypi.python.org flask
-COPY requirements.txt /
+COPY . /app
+WORKDIR /app
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
@@ -36,7 +37,5 @@ RUN pip install --upgrade pip && \
 ####
 
 EXPOSE 8080
-ADD main.py /
-
 ENTRYPOINT [ "python" ]
 CMD [ "main.py" ]
