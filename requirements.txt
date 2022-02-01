@@ -139,3 +139,4 @@ Werkzeug==2.0.1
 wrapt==1.12.1
 XlsxWriter==3.0.2
 yfinance==0.1.59
+gunicorn==19.3.0
