@@ -22,30 +22,32 @@ with open(docs_file, 'rb') as f:
 with open(inverted_index_file, 'rb') as f:
     inverted_index = pickle.load(f)
 
+
 @app.route("/")
 def home():
     return render_template("index.html",
-        top_1_body="...",
-        top_2_body="...",
-        top_3_body="...",
-        top_4_body="...",
-        top_5_body="...",
-        top_6_body="...",
-        top_7_body="...",
-        top_8_body="...",
-        top_9_body="...",
-        top_10_body="...",
-        top_1_title="...",
-        top_2_title="...",
-        top_3_title="...",
-        top_4_title="...",
-        top_5_title="...",
-        top_6_title="...",
-        top_7_title="...",
-        top_8_title="...",
-        top_9_title="...",
-        top_10_title="..."
-    )
+                           top_1_body="...",
+                           top_2_body="...",
+                           top_3_body="...",
+                           top_4_body="...",
+                           top_5_body="...",
+                           top_6_body="...",
+                           top_7_body="...",
+                           top_8_body="...",
+                           top_9_body="...",
+                           top_10_body="...",
+                           top_1_title="...",
+                           top_2_title="...",
+                           top_3_title="...",
+                           top_4_title="...",
+                           top_5_title="...",
+                           top_6_title="...",
+                           top_7_title="...",
+                           top_8_title="...",
+                           top_9_title="...",
+                           top_10_title="..."
+                           )
+
 
 def query(query):
     stopwords = helpers.get_stopwords(stopwords_file)
@@ -92,6 +94,7 @@ def query(query):
     return relevant_documents_lst
     #print('{}. {} - {}'.format(index + 1, docs[score[0]], score[1]))
 
+
 @app.route('/text_retrieval_demo', methods=["GET", "POST"])
 def text_retrieval_demo():
     if request.method == "POST":
@@ -119,10 +122,11 @@ def text_retrieval_demo():
             top_7_title=relevant_documents_lst[6]["title"],
             top_8_title=relevant_documents_lst[7]["title"],
             top_9_title=relevant_documents_lst[8]["title"],
-            top_10_title=relevant_documents_lst[9]["title"]   
+            top_10_title=relevant_documents_lst[9]["title"]
         )
     else:
         return ("nothing")
-    
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port=8080, debug=True)

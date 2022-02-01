@@ -37,4 +37,6 @@ RUN pip install --upgrade pip && \
 
 EXPOSE 8080
 ADD main.py /
-CMD ["flask", "run"]
+
+ENTRYPOINT [ "python" ]
+CMD [ "main.py" ]
