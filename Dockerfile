@@ -1,14 +1,22 @@
 ### 1. Get Linux
-FROM alpine:3.7
 FROM python:3.7
 
 ### 2. Get Java via the package manager
-RUN apk update \
-&& apk upgrade \
-&& apk add --no-cache bash \
-&& apk add --no-cache --virtual=build-dependencies unzip \
-&& apk add --no-cache curl \
-&& apk add --no-cache openjdk8-jre
+# Install OpenJDK-8
+RUN apt-get update && \
+    apt-get install -y openjdk-8-jdk && \
+    apt-get install -y ant && \
+    apt-get clean;
+    
+# Fix certificate issues
+RUN apt-get update && \
+    apt-get install ca-certificates-java && \
+    apt-get clean && \
+    update-ca-certificates -f;
+
+# Setup JAVA_HOME -- useful for docker commandline
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+RUN export JAVA_HOME
 
 ### 3. Get Python, PIP
 
