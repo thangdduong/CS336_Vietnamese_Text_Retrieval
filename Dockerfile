@@ -37,5 +37,4 @@ RUN pip install --upgrade pip && \
 ####
 
 EXPOSE 8080
-ENTRYPOINT [ "python" ]
-CMD [ "main.py" ]
+ENTRYPOINT ["gunicorn","--bind=0.0.0.0:8080","main:app"]
