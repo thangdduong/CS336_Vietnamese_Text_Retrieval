@@ -57,6 +57,6 @@ for i, row in dt.iterrows():
             all_aps.append(1/(index+1))
             break
 
-#print(f"mAP = {np.mean(all_aps)}")
-#with open("evaulation_results.txt", "a+", encoding="utf8") as f:
-#    f.write(f"mAP = {np.mean(all_aps)} - {round(np.mean(all_aps), 3)}\n")
+print(f"mAP = {np.mean(all_aps)}")
+with open("evaluation_results.txt", "a+", encoding="utf8") as f:
+    f.write(f"mAP = {np.mean(all_aps)} - {round(np.mean(all_aps), 3)}\n")
