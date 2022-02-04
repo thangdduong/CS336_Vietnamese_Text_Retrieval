@@ -39,6 +39,9 @@ $ conda create -n vsm_env -y
 $ pip install -r requirements.txt
 ```
 
+## Dataset
+The dataset we use in this project can be download in this [link](https://drive.google.com/drive/folders/1CnBSEoWIVuZ3RwZE6JfP0HTge7UIMDD4?usp=sharing)
+
 ## Usage
 
 Run `index.py` script to index documents stored in `resources/dataset` directory:
