@@ -62,20 +62,14 @@ for doc in docs:
         title = f.readline()
         text = [line for line in f if line != "\r\n"]
         body = " ".join(text)
-        #text = f.read()
-        #text = text.rstrip()
-        #print(doc, len(text.split()), sep=" ")
-        #text = " ".join(text.split())
-        #print(text)
         chunks_of_words = body.split("\r\n")
         chunks_of_words = list(filter(None, [line.strip() for line in chunks_of_words]))
-        #print(chunks_of_words)
         words = []
         for text_chunk in chunks_of_words:
             words += textprocessing.preprocess_text(text_chunk, stopwords)
-        #print(words)
         bag_of_words = Counter(words)
         corpus.append(bag_of_words)
+
         #worksheet.write_number(row, col, i)
         #worksheet.write_string(row, col + 1, title)
         #worksheet.write_string(row, col + 2, doc.split("\\")[-1])
