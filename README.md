@@ -10,7 +10,7 @@ In this project, we tackle the Vietnamese Text Retrieval problem using the Vecto
 <table>
   <tr>
     <th>No.</th>
-    <th>Full name</th>
+    <th>Full Name</th>
     <th>Student ID</th>
     <th>Gmail</th>
   </tr>
