@@ -1,6 +1,8 @@
 # CS336 Final Project: Text Retrieval
-[![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/)
+[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/)
 
+## Description
+In this project, we tackle the Vietnamese Text Retrieval problem using the Vector Space Model. This model is built from the corpus of 43303 Vietnam news. We also build a web demo that can input a query and retrieve the top 10 documents that might relevant to the query.
 ## Instructor
 <b>Ph.D. Thanh Duc Ngo</b>
 
