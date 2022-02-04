@@ -40,7 +40,7 @@ $ pip install -r requirements.txt
 ```
 
 ## Dataset
-The dataset we use in this project can be download in this [link](https://drive.google.com/drive/folders/1CnBSEoWIVuZ3RwZE6JfP0HTge7UIMDD4?usp=sharing)
+The dataset we use in this project can be downloaded from the following [link](https://drive.google.com/drive/folders/1CnBSEoWIVuZ3RwZE6JfP0HTge7UIMDD4?usp=sharing)
 
 ## Usage
 
