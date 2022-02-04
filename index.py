@@ -36,16 +36,16 @@ stopwords = helpers.get_stopwords(stopwords_file)
 docs = helpers.get_docs(dataset_path)
 
 # Create a workbook and add a worksheet.
-workbook = xlsxwriter.Workbook('data.xlsx')
-worksheet = workbook.add_worksheet()
+#workbook = xlsxwriter.Workbook('data.xlsx')
+#worksheet = workbook.add_worksheet()
 
 # Add a bold format to use to highlight cells.
-bold = workbook.add_format({'bold': 1})
+#bold = workbook.add_format({'bold': 1})
 
 # Write some data headers.
-worksheet.write('A1', 'doc_id', bold)
-worksheet.write('B1', 'title', bold)
-worksheet.write('C1', 'path', bold)
+#worksheet.write('A1', 'doc_id', bold)
+#worksheet.write('B1', 'title', bold)
+#worksheet.write('C1', 'path', bold)
 
 
 #df = pd.DataFrame(columns=["query", "doc_id", "title", "body"])
@@ -76,17 +76,17 @@ for doc in docs:
         #print(words)
         bag_of_words = Counter(words)
         corpus.append(bag_of_words)
-        worksheet.write_number(row, col, i)
-        worksheet.write_string(row, col + 1, title)
-        worksheet.write_string(row, col + 2, doc.split("\\")[-1])
-        row += 1
+        #worksheet.write_number(row, col, i)
+        #worksheet.write_string(row, col + 1, title)
+        #worksheet.write_string(row, col + 2, doc.split("\\")[-1])
+        #row += 1
         #row_content = {"query": "", "doc_id": str(i), "title": title, "body": body}
         #df = df.append(row_content, ignore_index = True)
     i += 1
     print(n - i)
 
-workbook.close()
-#df.to_excel("data.xlsx")
+#workbook.close()
+#df.to_csv("news_title_dataset.csv", encoding="utf8")
 
 
 idf = helpers.compute_idf(corpus)
